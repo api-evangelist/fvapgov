@@ -1,6 +1,7 @@
 aid: fvapgov
 name: FVAP.gov
-description: Published XML Feeds by State/Territory
+description: >-
+  Published XML Feeds by State/Territory.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -16,7 +17,8 @@ specificationVersion: '0.19'
 apis:
   - aid: fvapgov:fvapgov
     name: FVAP.gov
-    description: Published XML Feeds by State/Territory
+    description: >-
+      Published XML Feeds by State/Territory.
     humanURL: https://www.fvap.gov/xml-api
     tags:
       - Government

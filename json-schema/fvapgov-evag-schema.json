@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fvapgov/refs/heads/main/json-schema/fvapgov-evag-schema.json",
+  "title": "FVAP eVAG",
+  "description": "JSON Schema representation of the FVAP electronic Voting Assistance Guide (eVAG) feed combining important info, deadline dates, ballot rules, and election offices.",
+  "type": "object",
+  "properties": {
+    "important-info": {
+      "type": "object",
+      "properties": {
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": { "type": "string" },
+              "answer": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "deadline-dates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "election-type": { "type": "string" },
+          "voting-request-type": { "type": "string" },
+          "voter-type": { "type": "string" },
+          "location": { "type": "string" },
+          "date": { "type": ["string", "null"], "format": "date" }
+        }
+      }
+    },
+    "ballot-rules": {
+      "type": "object",
+      "properties": {
+        "fpca": { "$ref": "#/$defs/ruleList" },
+        "fwab": { "$ref": "#/$defs/ruleList" },
+        "vbr":  { "$ref": "#/$defs/ruleList" }
+      }
+    },
+    "election-offices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "jurisdiction":      { "type": "string" },
+          "jurisdiction-type": { "type": "string" },
+          "fax":               { "type": "string" },
+          "email":             { "type": "string", "format": "email" },
+          "street":            { "type": "string" },
+          "city":              { "type": "string" },
+          "state":             { "type": "string" },
+          "zip":               { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ruleList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label":        { "type": "string" },
+          "instructions": { "type": "string" }
+        }
+      }
+    }
+  }
+}

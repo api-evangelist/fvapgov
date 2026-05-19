@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FVAP.gov XML API — Election Offices
+  description: 'FVAP.gov XML API — Election Offices. 1 operations. Lead operation: Get election offices for a state or territory..
+    Self-contained Naftiko capability covering one Fvapgov business surface.'
+  tags:
+  - Fvapgov
+  - Election Offices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FVAPGOV_API_KEY: FVAPGOV_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: xml-election-offices
+    baseUri: https://www.fvap.gov
+    description: FVAP.gov XML API — Election Offices business capability. Self-contained, no shared references.
+    resources:
+    - name: xml-api-state-election-offices.xml
+      path: /xml-api/{state}/election-offices.xml
+      operations:
+      - name: getelectionoffices
+        method: GET
+        description: Get election offices for a state or territory.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: xml-election-offices-rest
+    port: 8080
+    description: REST adapter for FVAP.gov XML API — Election Offices. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/xml-api/{state}/election-offices-xml
+      name: xml-api-state-election-offices-xml
+      description: REST surface for xml-api-state-election-offices.xml.
+      operations:
+      - method: GET
+        name: getelectionoffices
+        description: Get election offices for a state or territory.
+        call: xml-election-offices.getelectionoffices
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: xml-election-offices-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FVAP.gov XML API — Election Offices. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-election-offices-state-territory
+      description: Get election offices for a state or territory.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: xml-election-offices.getelectionoffices
+      outputParameters:
+      - type: object
+        mapping: $.

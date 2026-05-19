@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FVAP.gov XML API — Ballot Rules
+  description: 'FVAP.gov XML API — Ballot Rules. 1 operations. Lead operation: Get ballot rules for a state or territory..
+    Self-contained Naftiko capability covering one Fvapgov business surface.'
+  tags:
+  - Fvapgov
+  - Ballot Rules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FVAPGOV_API_KEY: FVAPGOV_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: xml-ballot-rules
+    baseUri: https://www.fvap.gov
+    description: FVAP.gov XML API — Ballot Rules business capability. Self-contained, no shared references.
+    resources:
+    - name: xml-api-state-ballot-rules.xml
+      path: /xml-api/{state}/ballot-rules.xml
+      operations:
+      - name: getballotrules
+        method: GET
+        description: Get ballot rules for a state or territory.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: xml-ballot-rules-rest
+    port: 8080
+    description: REST adapter for FVAP.gov XML API — Ballot Rules. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/xml-api/{state}/ballot-rules-xml
+      name: xml-api-state-ballot-rules-xml
+      description: REST surface for xml-api-state-ballot-rules.xml.
+      operations:
+      - method: GET
+        name: getballotrules
+        description: Get ballot rules for a state or territory.
+        call: xml-ballot-rules.getballotrules
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: xml-ballot-rules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FVAP.gov XML API — Ballot Rules. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-ballot-rules-state-territory
+      description: Get ballot rules for a state or territory.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: xml-ballot-rules.getballotrules
+      outputParameters:
+      - type: object
+        mapping: $.

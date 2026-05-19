@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FVAP.gov XML API — Deadline Dates
+  description: 'FVAP.gov XML API — Deadline Dates. 1 operations. Lead operation: Get deadline dates for a state or territory..
+    Self-contained Naftiko capability covering one Fvapgov business surface.'
+  tags:
+  - Fvapgov
+  - Deadline Dates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FVAPGOV_API_KEY: FVAPGOV_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: xml-deadline-dates
+    baseUri: https://www.fvap.gov
+    description: FVAP.gov XML API — Deadline Dates business capability. Self-contained, no shared references.
+    resources:
+    - name: xml-api-state-deadline-dates.xml
+      path: /xml-api/{state}/deadline-dates.xml
+      operations:
+      - name: getdeadlinedates
+        method: GET
+        description: Get deadline dates for a state or territory.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: xml-deadline-dates-rest
+    port: 8080
+    description: REST adapter for FVAP.gov XML API — Deadline Dates. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/xml-api/{state}/deadline-dates-xml
+      name: xml-api-state-deadline-dates-xml
+      description: REST surface for xml-api-state-deadline-dates.xml.
+      operations:
+      - method: GET
+        name: getdeadlinedates
+        description: Get deadline dates for a state or territory.
+        call: xml-deadline-dates.getdeadlinedates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: xml-deadline-dates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for FVAP.gov XML API — Deadline Dates. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-deadline-dates-state-territory
+      description: Get deadline dates for a state or territory.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: xml-deadline-dates.getdeadlinedates
+      outputParameters:
+      - type: object
+        mapping: $.

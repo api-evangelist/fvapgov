@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FVAP.gov XML API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Important Info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get important voting information for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/important-info.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the FAQ-style important voting information XML feed for the specified jurisdiction."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Deadline Dates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get deadline dates for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/deadline-dates.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the election deadlines XML feed for the specified jurisdiction."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Ballot Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get ballot rules for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/ballot-rules.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the FPCA, FWAB, and VBR ballot rules XML feed for the specified jurisdiction."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Election Offices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get election offices for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/election-offices.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the local election office contact information XML feed for the specified jurisdiction."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "eVAG",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the combined eVAG feed for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/evag.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the combined electronic Voting Assistance Guide (eVAG) XML feed bundling important info, deadline dates, ballot rules, and election offices for the specified jurisdiction."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Schema",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the XML schema definition for the FVAP feeds.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/api-schema.xsd"
+          },
+          "docs": "Returns the XSD describing the structure of all FVAP XML feeds."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

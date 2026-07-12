@@ -35,12 +35,16 @@ apis:
       - type: OpenAPI
         url: openapi/fvapgov-xml-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/fvapgov-domain-security.yml
   - type: Website
     url: https://www.fvap.gov/
   - type: Documentation
     url: https://www.fvap.gov/xml-api
   - type: JSONSchema
     url: json-schema/fvapgov-evag-schema.json
+  - url: https://www.fvap.gov
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

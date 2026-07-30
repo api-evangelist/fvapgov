@@ -5,7 +5,19 @@ description: >-
   including important info, deadline dates, ballot rules, and election offices, plus a combined electronic Voting
   Assistance Guide (eVAG).
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fvapgov.png
 access: 3rd-Party
 created: '2024-03-30'
 modified: '2026-05-19'
@@ -16,24 +28,90 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/fvapgov/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: fvapgov:fvapgov-xml-api
-    name: FVAP.gov XML API
-    description: >-
-      Published XML feeds providing voter information by U.S. state and territory: important info, deadline dates,
-      ballot rules, election offices, and a combined eVAG document.
-    humanURL: https://www.fvap.gov/xml-api
-    baseURL: https://www.fvap.gov
-    tags:
-      - Elections
-      - Government
-      - Voting
-    properties:
-      - type: Documentation
-        url: https://www.fvap.gov/xml-api
-      - type: XSD
-        url: https://www.fvap.gov/xml-api/api-schema.xsd
-      - type: OpenAPI
-        url: openapi/fvapgov-xml-api-openapi.yml
+- aid: fvapgov:fvapgov-ballot-rules-api
+  name: FVAP.gov Ballot Rules API
+  description: State-specific ballot rules (FPCA, FWAB, VBR).
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - Ballot Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-ballot-rules-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
+- aid: fvapgov:fvapgov-deadline-dates-api
+  name: FVAP.gov Deadline Dates API
+  description: Election deadlines for a jurisdiction.
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - Deadline Dates
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-deadline-dates-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
+- aid: fvapgov:fvapgov-election-offices-api
+  name: FVAP.gov Election Offices API
+  description: Local election office contact information.
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - Election Offices
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-election-offices-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
+- aid: fvapgov:fvapgov-evag-api
+  name: FVAP.gov eVAG API
+  description: Combined electronic Voting Assistance Guide.
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - eVAG
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-evag-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
+- aid: fvapgov:fvapgov-important-info-api
+  name: FVAP.gov Important Info API
+  description: General voting information for a jurisdiction.
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - Important Info
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-important-info-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
+- aid: fvapgov:fvapgov-schema-api
+  name: FVAP.gov Schema API
+  description: XML schema definition.
+  humanURL: https://www.fvap.gov/xml-api
+  baseURL: https://www.fvap.gov
+  tags:
+  - Schema
+  properties:
+  - type: OpenAPI
+    url: openapi/fvapgov-schema-api-openapi.yml
+  - type: Documentation
+    url: https://www.fvap.gov/xml-api
+  - type: XSD
+    url: https://www.fvap.gov/xml-api/api-schema.xsd
 common:
   - type: AgenticAccess
     url: agentic-access/fvapgov-agentic-access.yml

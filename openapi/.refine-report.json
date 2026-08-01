@@ -1,0 +1,24 @@
+{
+  "provider": "fvapgov",
+  "sources": [
+    "fvapgov-ballot-rules-api-openapi.yml",
+    "fvapgov-deadline-dates-api-openapi.yml",
+    "fvapgov-election-offices-api-openapi.yml",
+    "fvapgov-evag-api-openapi.yml",
+    "fvapgov-important-info-api-openapi.yml",
+    "fvapgov-schema-api-openapi.yml"
+  ],
+  "outputs": [
+    "fvapgov-ballot-rules-api-openapi.yml",
+    "fvapgov-deadline-dates-api-openapi.yml",
+    "fvapgov-election-offices-api-openapi.yml",
+    "fvapgov-evag-api-openapi.yml",
+    "fvapgov-important-info-api-openapi.yml",
+    "fvapgov-schema-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FVAP.gov XML Ballot Rules Important Info API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Important Info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get important voting information for a state or territory.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/:state/important-info.xml",
+            "params": [
+              {
+                "name": "state",
+                "value": "",
+                "type": "path",
+                "description": "U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia)."
+              }
+            ]
+          },
+          "docs": "Returns the FAQ-style important voting information XML feed for the specified jurisdiction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

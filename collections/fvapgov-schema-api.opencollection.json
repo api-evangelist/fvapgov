@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FVAP.gov XML Ballot Rules Schema API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schema",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the XML schema definition for the FVAP feeds.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.fvap.gov/xml-api/api-schema.xsd"
+          },
+          "docs": "Returns the XSD describing the structure of all FVAP XML feeds."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -26,7 +26,7 @@ tags:
   - Government
   - Voting
 url: https://raw.githubusercontent.com/api-evangelist/fvapgov/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: fvapgov:fvapgov-ballot-rules-api
   name: FVAP.gov Ballot Rules API

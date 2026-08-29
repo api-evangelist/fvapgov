@@ -124,6 +124,9 @@ apis:
   - type: XSD
     url: https://www.fvap.gov/xml-api/api-schema.xsd
 common:
+  - type: CapabilityMap
+    url: capabilities/fvapgov-capability-edges.yml
+    name: FVAP.gov Business Capability Map
   - type: AgenticAccess
     url: agentic-access/fvapgov-agentic-access.yml
   - type: DomainSecurity

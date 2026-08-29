@@ -1,0 +1,66 @@
+slug: fvapgov
+provider: FVAP.gov
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Ballot Rules
+  spec_file: fvapgov-ballot-rules-api-openapi.yml
+  capability_id: BC-3330
+  capability_id_l1: BC-3330
+  capability_name: Electoral Administration Management
+  confidence: 0.78
+  evidence: GET /xml-api/{state}/ballot-rules.xml getBallotRules Get ballot rules for a state or territory.
+  reason: Federal Voting Assistance Program feed publishing per-jurisdiction ballot rules for voters —
+    electoral administration information. Mapped at L1 because the content spans ballot access/casting
+    rules rather than one specific sub-capability like ballot design or polling operations.
+- tag: eVAG
+  spec_file: fvapgov-evag-api-openapi.yml
+  capability_id: BC-3330
+  capability_id_l1: BC-3330
+  capability_name: Electoral Administration Management
+  confidence: 0.78
+  evidence: GET /xml-api/{state}/evag.xml getEvag Get the combined eVAG feed for a state or territory.
+  reason: Combined electronic Voting Assistance Guide per state, aggregating ballot rules, deadlines,
+    election offices and voter info — electoral administration information at L1; too broad for a single
+    L2.
+- tag: Deadline Dates
+  spec_file: fvapgov-deadline-dates-api-openapi.yml
+  capability_id: BC-3330
+  capability_id_l1: BC-3330
+  capability_name: Electoral Administration Management
+  confidence: 0.75
+  evidence: GET /xml-api/{state}/deadline-dates.xml getDeadlineDates Get deadline dates for a state or
+    territory.
+  reason: Publishes statutory election deadlines (registration, ballot request/return) per state for absentee
+    and overseas voters — electoral administration domain. Held at L1 since deadlines span registration
+    and polling sub-capabilities.
+- tag: Election Offices
+  spec_file: fvapgov-election-offices-api-openapi.yml
+  capability_id: BC-3330
+  capability_id_l1: BC-3330
+  capability_name: Electoral Administration Management
+  confidence: 0.75
+  evidence: GET /xml-api/{state}/election-offices.xml getElectionOffices Get election offices for a state
+    or territory.
+  reason: Directory of jurisdictional election offices published by the Federal Voting Assistance Program;
+    clearly within electoral administration, but a contact registry does not name a specific L2.
+- tag: Important Info
+  spec_file: fvapgov-important-info-api-openapi.yml
+  capability_id: BC-3330
+  capability_id_l1: BC-3330
+  capability_name: Electoral Administration Management
+  confidence: 0.7
+  evidence: GET /xml-api/{state}/important-info.xml getImportantInfo  Get important voting information
+    for a state or territory.
+  reason: State-level voting guidance for voters, part of the FVAP voter-information feed set. Electoral
+    administration at L1; content is generic voter information so no L2 asserted.

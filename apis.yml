@@ -32,7 +32,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fvapgov.pn
 access: 3rd-Party
 created: '2024-03-30'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 tags:
   - Government
   - Voting

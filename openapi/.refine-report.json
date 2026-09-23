@@ -1,24 +1,30 @@
 {
   "provider": "fvapgov",
   "sources": [
-    "fvapgov-ballot-rules-api-openapi.yml",
-    "fvapgov-deadline-dates-api-openapi.yml",
-    "fvapgov-election-offices-api-openapi.yml",
-    "fvapgov-evag-api-openapi.yml",
-    "fvapgov-important-info-api-openapi.yml",
-    "fvapgov-schema-api-openapi.yml"
+    "_original/fvapgov-xml-api-openapi.yml"
   ],
   "outputs": [
     "fvapgov-ballot-rules-api-openapi.yml",
     "fvapgov-deadline-dates-api-openapi.yml",
     "fvapgov-election-offices-api-openapi.yml",
-    "fvapgov-evag-api-openapi.yml",
     "fvapgov-important-info-api-openapi.yml",
-    "fvapgov-schema-api-openapi.yml"
+    "fvapgov-schema-api-openapi.yml",
+    "fvapgov-evag-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fvapgov-xml-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fvapgov-ballot-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fvapgov-deadline-dates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fvapgov-election-offices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fvapgov-evag-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fvapgov-important-info-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fvapgov-schema-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

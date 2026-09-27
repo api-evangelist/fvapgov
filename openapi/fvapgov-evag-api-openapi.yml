@@ -47,6 +47,13 @@ components:
                 type: string
               answer:
                 type: string
+    BallotRule:
+      type: object
+      properties:
+        label:
+          type: string
+        instructions:
+          type: string
     Evag:
       type: object
       description: Combined electronic Voting Assistance Guide bundling all four sections.
@@ -59,6 +66,29 @@ components:
           $ref: '#/components/schemas/BallotRules'
         election-offices:
           $ref: '#/components/schemas/ElectionOffices'
+    DeadlineDate:
+      type: object
+      properties:
+        election-type:
+          type: string
+        voting-request-type:
+          type: string
+        voter-type:
+          type: string
+        location:
+          type: string
+        date:
+          type:
+          - string
+          - 'null'
+          format: date
+    ElectionOffices:
+      type: object
+      properties:
+        election-offices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ElectionOffice'
     ElectionOffice:
       type: object
       properties:
@@ -78,37 +108,6 @@ components:
           type: string
         zip:
           type: string
-    DeadlineDate:
-      type: object
-      properties:
-        election-type:
-          type: string
-        voting-request-type:
-          type: string
-        voter-type:
-          type: string
-        location:
-          type: string
-        date:
-          type:
-          - string
-          - 'null'
-          format: date
-    BallotRule:
-      type: object
-      properties:
-        label:
-          type: string
-        instructions:
-          type: string
-    DeadlineDates:
-      type: object
-      description: Election deadline dates collection.
-      properties:
-        deadline-dates:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeadlineDate'
     BallotRules:
       type: object
       description: Ballot rules grouped into FPCA, FWAB, and VBR sections.
@@ -125,13 +124,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BallotRule'
-    ElectionOffices:
+    DeadlineDates:
       type: object
+      description: Election deadline dates collection.
       properties:
-        election-offices:
+        deadline-dates:
           type: array
           items:
-            $ref: '#/components/schemas/ElectionOffice'
+            $ref: '#/components/schemas/DeadlineDate'
   parameters:
     State:
       name: state

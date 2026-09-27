@@ -43,7 +43,6 @@ apis:
   name: FVAP.gov Ballot Rules API
   description: State-specific ballot rules (FPCA, FWAB, VBR).
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - Ballot Rules
   properties:
@@ -57,7 +56,6 @@ apis:
   name: FVAP.gov Deadline Dates API
   description: Election deadlines for a jurisdiction.
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - Deadline Dates
   properties:
@@ -71,7 +69,6 @@ apis:
   name: FVAP.gov Election Offices API
   description: Local election office contact information.
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - Election Offices
   properties:
@@ -85,7 +82,6 @@ apis:
   name: FVAP.gov eVAG API
   description: Combined electronic Voting Assistance Guide.
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - eVAG
   properties:
@@ -99,7 +95,6 @@ apis:
   name: FVAP.gov Important Info API
   description: General voting information for a jurisdiction.
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - Important Info
   properties:
@@ -113,7 +108,6 @@ apis:
   name: FVAP.gov Schema API
   description: XML schema definition.
   humanURL: https://www.fvap.gov/xml-api
-  baseURL: https://www.fvap.gov
   tags:
   - Schema
   properties:

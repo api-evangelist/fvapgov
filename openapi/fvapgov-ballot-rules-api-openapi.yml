@@ -33,14 +33,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/BallotRules'
 components:
-  parameters:
-    State:
-      name: state
-      in: path
-      required: true
-      description: U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia).
-      schema:
-        type: string
   schemas:
     BallotRules:
       type: object
@@ -65,3 +57,11 @@ components:
           type: string
         instructions:
           type: string
+  parameters:
+    State:
+      name: state
+      in: path
+      required: true
+      description: U.S. state, district, or territory name (PascalCase, e.g. Alabama, NewYork, PuertoRico, DistrictOfColumbia).
+      schema:
+        type: string

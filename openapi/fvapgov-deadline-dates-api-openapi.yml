@@ -34,6 +34,14 @@ paths:
                 $ref: '#/components/schemas/DeadlineDates'
 components:
   schemas:
+    DeadlineDates:
+      type: object
+      description: Election deadline dates collection.
+      properties:
+        deadline-dates:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeadlineDate'
     DeadlineDate:
       type: object
       properties:
@@ -50,14 +58,6 @@ components:
           - string
           - 'null'
           format: date
-    DeadlineDates:
-      type: object
-      description: Election deadline dates collection.
-      properties:
-        deadline-dates:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeadlineDate'
   parameters:
     State:
       name: state

@@ -34,6 +34,13 @@ paths:
                 $ref: '#/components/schemas/Evag'
 components:
   schemas:
+    ElectionOffices:
+      type: object
+      properties:
+        election-offices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ElectionOffice'
     ImportantInfo:
       type: object
       description: FAQ-style important voting information.
@@ -47,13 +54,6 @@ components:
                 type: string
               answer:
                 type: string
-    BallotRule:
-      type: object
-      properties:
-        label:
-          type: string
-        instructions:
-          type: string
     Evag:
       type: object
       description: Combined electronic Voting Assistance Guide bundling all four sections.
@@ -66,6 +66,29 @@ components:
           $ref: '#/components/schemas/BallotRules'
         election-offices:
           $ref: '#/components/schemas/ElectionOffices'
+    BallotRules:
+      type: object
+      description: Ballot rules grouped into FPCA, FWAB, and VBR sections.
+      properties:
+        fpca:
+          type: array
+          items:
+            $ref: '#/components/schemas/BallotRule'
+        fwab:
+          type: array
+          items:
+            $ref: '#/components/schemas/BallotRule'
+        vbr:
+          type: array
+          items:
+            $ref: '#/components/schemas/BallotRule'
+    BallotRule:
+      type: object
+      properties:
+        label:
+          type: string
+        instructions:
+          type: string
     DeadlineDate:
       type: object
       properties:
@@ -82,13 +105,6 @@ components:
           - string
           - 'null'
           format: date
-    ElectionOffices:
-      type: object
-      properties:
-        election-offices:
-          type: array
-          items:
-            $ref: '#/components/schemas/ElectionOffice'
     ElectionOffice:
       type: object
       properties:
@@ -108,22 +124,6 @@ components:
           type: string
         zip:
           type: string
-    BallotRules:
-      type: object
-      description: Ballot rules grouped into FPCA, FWAB, and VBR sections.
-      properties:
-        fpca:
-          type: array
-          items:
-            $ref: '#/components/schemas/BallotRule'
-        fwab:
-          type: array
-          items:
-            $ref: '#/components/schemas/BallotRule'
-        vbr:
-          type: array
-          items:
-            $ref: '#/components/schemas/BallotRule'
     DeadlineDates:
       type: object
       description: Election deadline dates collection.

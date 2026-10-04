@@ -34,38 +34,6 @@ paths:
                 $ref: '#/components/schemas/Evag'
 components:
   schemas:
-    ElectionOffices:
-      type: object
-      properties:
-        election-offices:
-          type: array
-          items:
-            $ref: '#/components/schemas/ElectionOffice'
-    ImportantInfo:
-      type: object
-      description: FAQ-style important voting information.
-      properties:
-        questions:
-          type: array
-          items:
-            type: object
-            properties:
-              question:
-                type: string
-              answer:
-                type: string
-    Evag:
-      type: object
-      description: Combined electronic Voting Assistance Guide bundling all four sections.
-      properties:
-        important-info:
-          $ref: '#/components/schemas/ImportantInfo'
-        deadline-dates:
-          $ref: '#/components/schemas/DeadlineDates'
-        ballot-rules:
-          $ref: '#/components/schemas/BallotRules'
-        election-offices:
-          $ref: '#/components/schemas/ElectionOffices'
     BallotRules:
       type: object
       description: Ballot rules grouped into FPCA, FWAB, and VBR sections.
@@ -82,29 +50,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BallotRule'
-    BallotRule:
+    ElectionOffices:
       type: object
       properties:
-        label:
-          type: string
-        instructions:
-          type: string
-    DeadlineDate:
-      type: object
-      properties:
-        election-type:
-          type: string
-        voting-request-type:
-          type: string
-        voter-type:
-          type: string
-        location:
-          type: string
-        date:
-          type:
-          - string
-          - 'null'
-          format: date
+        election-offices:
+          type: array
+          items:
+            $ref: '#/components/schemas/ElectionOffice'
     ElectionOffice:
       type: object
       properties:
@@ -132,6 +84,54 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DeadlineDate'
+    ImportantInfo:
+      type: object
+      description: FAQ-style important voting information.
+      properties:
+        questions:
+          type: array
+          items:
+            type: object
+            properties:
+              question:
+                type: string
+              answer:
+                type: string
+    DeadlineDate:
+      type: object
+      properties:
+        election-type:
+          type: string
+        voting-request-type:
+          type: string
+        voter-type:
+          type: string
+        location:
+          type: string
+        date:
+          type:
+          - string
+          - 'null'
+          format: date
+    Evag:
+      type: object
+      description: Combined electronic Voting Assistance Guide bundling all four sections.
+      properties:
+        important-info:
+          $ref: '#/components/schemas/ImportantInfo'
+        deadline-dates:
+          $ref: '#/components/schemas/DeadlineDates'
+        ballot-rules:
+          $ref: '#/components/schemas/BallotRules'
+        election-offices:
+          $ref: '#/components/schemas/ElectionOffices'
+    BallotRule:
+      type: object
+      properties:
+        label:
+          type: string
+        instructions:
+          type: string
   parameters:
     State:
       name: state

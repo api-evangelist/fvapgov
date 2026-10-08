@@ -118,6 +118,12 @@ apis:
   - type: XSD
     url: https://www.fvap.gov/xml-api/api-schema.xsd
 common:
+  - type: Plans
+    url: plans/fvapgov-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/fvapgov-rate-limits.yml
+  - type: FinOps
+    url: finops/fvapgov-finops.yml
   - type: CapabilityMap
     url: capabilities/fvapgov-capability-edges.yml
     name: FVAP.gov Business Capability Map

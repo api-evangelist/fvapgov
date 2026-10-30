@@ -1,4 +1,4 @@
-# FVAP.gov (fvapgov)
+# FVAP.gov
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,54 +66,136 @@
 
 Federal Voting Assistance Program (FVAP) publishes XML feeds of voter information by U.S. state and territory, including important info, deadline dates, ballot rules, and election offices, plus a combined electronic Voting Assistance Guide (eVAG).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fvapgov/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fvapgov/refs/heads/main/apis.yml)
+**Areas:** Government · Voting
 
-## Scope
+## FVAP.gov on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for FVAP.gov is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fvapgov/](https://apis.io/providers/fvapgov/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Government
-- Voting
+- [FVAP.gov Ballot Rules API](https://apis.io/apis/fvapgov/fvapgov-ballot-rules-api/) — State-specific ballot rules (FPCA, FWAB, VBR).
+- [FVAP.gov Deadline Dates API](https://apis.io/apis/fvapgov/fvapgov-deadline-dates-api/) — Election deadlines for a jurisdiction.
+- [FVAP.gov Election Offices API](https://apis.io/apis/fvapgov/fvapgov-election-offices-api/) — Local election office contact information.
+- [FVAP.gov eVAG API](https://apis.io/apis/fvapgov/fvapgov-evag-api/) — Combined electronic Voting Assistance Guide.
+- [FVAP.gov Important Info API](https://apis.io/apis/fvapgov/fvapgov-important-info-api/) — General voting information for a jurisdiction.
+- [FVAP.gov Schema API](https://apis.io/apis/fvapgov/fvapgov-schema-api/) — XML schema definition.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-03-30
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### FVAP.gov XML API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Published XML feeds providing voter information by U.S. state and territory: important info, deadline dates, ballot rules, election offices, and a combined eVAG document.
+- [Fvapgov Agentic Access](https://apis.io/agentic-access/fvapgov/fvapgov-agentic-access/)
 
-- **Human URL:** [https://www.fvap.gov/xml-api](https://www.fvap.gov/xml-api)
-- **Base URL:** `https://www.fvap.gov`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Elections
-- Government
-- Voting
+- [FVAP eVAG](https://apis.io/schemas/fvapgov/fvapgov-evag/)
 
-#### Properties
+#### Collections (7)
 
-- [Documentation](https://www.fvap.gov/xml-api)
-- [X S D](https://www.fvap.gov/xml-api/api-schema.xsd)
-- [OpenAPI](openapi/fvapgov-xml-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fvapgov-xml-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fvapgov-xml-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [FVAP.gov XML Ballot Rules API](https://apis.io/collections/fvapgov/open-fvapgov-ballot-rules-api/)
+- [FVAP.gov XML Ballot Rules Deadline Dates API](https://apis.io/collections/fvapgov/open-fvapgov-deadline-dates-api/)
+- [FVAP.gov XML Ballot Rules Election Offices API](https://apis.io/collections/fvapgov/open-fvapgov-election-offices-api/)
+- [FVAP.gov XML Ballot Rules eVAG API](https://apis.io/collections/fvapgov/open-fvapgov-evag-api/)
+- [FVAP.gov XML Ballot Rules Important Info API](https://apis.io/collections/fvapgov/open-fvapgov-important-info-api/)
+- [FVAP.gov XML Ballot Rules Schema API](https://apis.io/collections/fvapgov/open-fvapgov-schema-api/)
+- [FVAP.gov XML API](https://apis.io/collections/fvapgov/open-fvapgov-xml-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [FVAP.gov — jsonschema rules](https://apis.io/rules/fvapgov/fvapgov-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fvapgov Domain Security](https://apis.io/security/fvapgov/fvapgov-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fvapgov Plans Pricing](https://apis.io/plans/fvapgov/fvapgov-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fvapgov Rate Limits](https://apis.io/rate-limits/fvapgov/fvapgov-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fvapgov Finops](https://apis.io/finops/fvapgov/fvapgov-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.fvap.gov/)
 - [Documentation](https://www.fvap.gov/xml-api)
-- [JSON Schema](json-schema/fvapgov-evag-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [Blog](https://www.fvap.gov)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 18.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 43.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 2.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fvapgov/](https://apis.io/providers/fvapgov/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FVAP.gov: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fvapgov/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
